@@ -500,7 +500,7 @@ Kubernetes tarjoaa myös resurssin [Secret](https://kubernetes.io/docs/concepts/
 
 Sovelluksen Kubernetes-konfiguraatiot, eli manifestit on nyt talletettu hakemistoon `manifests`, ja konfiguraatioista muut paitsi salaista tietoa sisältävä `configmap.yaml` on tallennettu versionhallintaan.
 
-Koko sovelluksen konfiguraatiot voi päivittää klusterille komennolla `oc apply -f manifests`, eli antamalla parametriksi manifestit sisältämän hakemiston. Monimutkaisemmassa sovelluksessa manifestitiedostot voivat olla hajaantuneet useampaan hakemistoon ja klusterin synkronointi voi olla hankalampaa.
+Koko sovelluksen konfiguraatiot voi päivittää klusterille komennolla `oc apply -f manifests`, eli antamalla parametriksi manifestit sisältävän hakemiston. Monimutkaisemmassa sovelluksessa manifestitiedostot voivat olla hajaantuneet useampaan hakemistoon ja klusterin synkronointi voi olla hankalampaa.
 
 [Kustomize](https://kustomize.io/)-työkalu (joka on nykyään sisäänrakennettu Kubernetesin komentoriville) tuo helpotusta tähän (ja tarjoaa paljon muutakin). Määritellään tiedosto `kustomize.yaml`, joka listaa yksittäiset manifestit:
 
@@ -534,8 +534,8 @@ Esimerkkimme tapauksessa Kustomize ei tuo juurikaan etuja, suuremmassa projektis
 | `oc import-image image:tagi` | päivitä imagesream heti |
 | `oc logs <pod>` |  näytä sovelluksen lokit |
 | `oc logs -f <pod>` |  seuraa sovelluksen lokeja |
-| `oc port-forward <pod>` | ohjaa lokaalin koneen portin liikenne podiin |
-| `oc port-forward svc/<service>` | ohjaa lokaalin koneen portin liikenne palveluun |
+| `oc port-forward <pod>` | ohjaa lokaalin koneen portin liikennepodiin |
+| `oc port-forward svc/<service>` | ohjaa lokaalin koneen portin liikennepalveluun |
 
 ### Tietokannan hankkiminen
 
